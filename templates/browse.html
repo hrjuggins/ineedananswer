@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}
+    <link href="{{ url_for('static', filename='browse.css') }}" rel="stylesheet"/>
+{% endblock %}
+{% block main %}
+<h3>User submitted polls</h2>
+<div id="ending">
+    <h4>Polls ending soon</h3>
+    <div class="list-group">
+    {% for line in ending[:5] %}
+        <a href="/poll/{{ line['poll_id'] }}" class="list-group-item">
+            <h5 class="list-group-item-heading">{{ line['question'] }}</h5>
+            <p class="list-group-item-text">{{ line['username'] }}</p>
+        </a>
+    {% endfor %}
+    </div>
+</div>
+<div id="responses">
+    <h4>All current polls</h3>
+    <div class="list-group">
+    {% for line in responses %}
+        <a href="/poll/{{ line['poll_id'] }}" class="list-group-item">
+            <h5 class="list-group-item-heading">{{ line['question'] }}</h5>
+            <p class="list-group-item-text">{{ line['username'] }}</p>
+        </a>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

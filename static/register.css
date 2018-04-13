@@ -1,0 +1,73 @@
+#question {
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+#answers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+select {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid white;
+  height: 35px;
+  background: none;
+}
+fieldset {
+    width: 100vw;
+}
+.form-group {
+    color: #333;
+    align-items: center;
+}
+.form-control {
+    background: none !important;
+    width: 80%;
+    border-radius: 5px;
+    margin: 0;
+}
+.form-control, textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid white;
+  height: 35px;
+}
+ 
+.form-control:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+#submit {
+    margin: 20px;
+    width: 40vw;
+    height: 10vh;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Raleway';
+    font-weight: bold;
+    color: #333;
+}
+h3 {
+    font-size: 1em;
+}

@@ -1,0 +1,34 @@
+#title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 7vw;
+    text-align: center;
+    background-image: #360033;  /* fallback for old browsers */
+    background-image: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+}
+h3, h4 {
+    font-family: 'Raleway';
+}
+h3 {
+    text-align: center;
+}
+h4 {
+    padding: 15px;
+}
+#ending {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+}
+#responses {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 4;
+}

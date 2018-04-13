@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}
+    <link href="{{ url_for('static', filename='login.css') }}" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Molle:400i|Raleway" rel="stylesheet">
+{% endblock %}
+{% block main %}
+    <form action="{{ url_for('login') }}" method="post">
+        <h4>Username</h4>
+        <input autocomplete="off" autofocus class="form-control" name="username" placeholder="" type="text"/>
+        <h4>Password</h4>
+        <input class="form-control" name="password" placeholder="" type="password"/>
+
+        <button id="submit" type="submit">Log In</button>
+
+    </form>
+{% endblock %}

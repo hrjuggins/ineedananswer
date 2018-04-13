@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}
+    <link href="{{ url_for('static', filename='register.css') }}" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Molle:400i|Raleway" rel="stylesheet">
+        
+{% endblock %}
+{% block main %}
+    <form action="{{ url_for('register') }}" method="post">
+        <h4>Choose your username</h4>
+        <input autocomplete="off" autofocus class="form-control" name="username" placeholder="" type="text"/>
+        <h4>Create a password</h4>
+        <input class="form-control" name="password" placeholder="" type="password"/>
+        <h4>Re-type password</h4>
+        <input class="form-control" name="check-password" placeholder="" type="password"/>
+
+        <button id="submit" type="submit">Register</button>
+        <h3><a href="/login">Already have an account?</a></h3>
+    </form>
+    
+    
+{% endblock %}

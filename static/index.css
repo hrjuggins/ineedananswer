@@ -1,0 +1,51 @@
+html, body {
+    margin: 0;
+    height: 100vh;
+    background: #24C6DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.navbar {
+    background: none;
+    margin: 0;
+}
+.navbar-default .navbar-toggle {
+    border-color: white;
+}
+#container {
+    height: 80vh;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+}
+#heading {
+    width: 70vw;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Raleway';
+}
+#title {
+    font-family: 'Molle', cursive;
+    color: white;
+    font-size: 15vw;
+}
+h3, h4 {
+    font-family: 'Raleway';
+}
+button[name="submit"] {
+    margin: 10px;
+    width: 40vw;
+    height: 10vh;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-family: 'Raleway';
+    font-weight: bold;
+    color: #333;
+}

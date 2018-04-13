@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block title %}
+    <link href="{{ url_for('static', filename='results.css') }}" rel="stylesheet"/>
+{% endblock %}
+{% block main %}
+
+<h1 id="title"><span id="indecisive">indecisive poll </span> by {{ username }}</h1>
+<div id="answers">
+<h2 id="question">{{ question }}{{ details['question'] }}</h2>
+    <div class="progress" id="progress1">
+      <div class="progress-bar" role="progressbar" aria-valuenow="70"
+      aria-valuemin="0" aria-valuemax="100" id="result1" style="width:0%">
+          <div class="progress-fill-text">{{ details['answer1'] }}</div>
+      </div>
+      <span id="span1" class="span">{{ details['answer1'] }}</span>
+    </div>
+    <div class="progress" id="progress2">
+      <div class="progress-bar" role="progressbar" aria-valuenow="70"
+      aria-valuemin="0" aria-valuemax="100" id="result2" style="width:0%">
+          <div class="progress-fill-text">{{ details['answer2'] }}</div>
+      </div>
+      <span id="span2" class="span">{{ details['answer2'] }}</span>
+    </div>
+    <div class="progress" id="progress3">
+      <div class="progress-bar" role="progressbar" aria-valuenow="70"
+      aria-valuemin="0" aria-valuemax="100" id="result3" style="width:0%">
+          <div class="progress-fill-text">{{ details['answer3'] }}</div>
+      </div>
+      <span id="span3" class="span">{{ details['answer3'] }}</span>
+    </div>
+    <div class="progress" id="progress4">
+      <div class="progress-bar" role="progressbar" aria-valuenow="70"
+      aria-valuemin="0" aria-valuemax="100" id="result4" style="width:0%">
+          <div class="progress-fill-text" id="text">{{ details['answer4'] }}</div>
+      </div>
+      <span id="span4" class="span">{{ details['answer4'] }}</span>
+    </div>
+</div>
+ 
+<script>
+
+$(function() {
+  for (var i = 1; i < 5; i++) {
+    if ($("#span" + i).outerHeight() > $("#progress" + i).height()) {
+        $("#progress" + i).height($("#span" + i).outerHeight())
+    }
+}
+
+$("#result1").width("{{ ((details['result1'] / (details['result1'] + details['result2'] + details['result3'] + details['result4'])) * 100) if (details['result1'] + details['result2'] + details['result3'] + details['result4']) != 0 else 0 }}%")
+$("#result2").width("{{ ((details['result2'] / (details['result1'] + details['result2'] + details['result3'] + details['result4'])) * 100) if (details['result1'] + details['result2'] + details['result3'] + details['result4']) != 0 else 0 }}%")
+$("#result3").width("{{ ((details['result3'] / (details['result1'] + details['result2'] + details['result3'] + details['result4'])) * 100) if (details['result1'] + details['result2'] + details['result3'] + details['result4']) != 0 else 0 }}%")
+$("#result4").width("{{ ((details['result4'] / (details['result1'] + details['result2'] + details['result3'] + details['result4'])) * 100) if (details['result1'] + details['result2'] + details['result3'] + details['result4']) != 0 else 0 }}%")
+
+$("div.progress").each(function() {
+    if (this.innerText === "NoneNone") {
+        this.style.display = "none";
+    }
+})
+
+});
+  
+</script>
+
+
+{% endblock %}
+    

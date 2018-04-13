@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title %}
+    <link href="{{ url_for('static', filename='new.css') }}" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Molle:400i|Raleway" rel="stylesheet">
+
+{% endblock %}
+{% block main %}
+    <form action="{{ url_for("new") }}" method="POST">
+        <h4>Whats your name?</h4>
+        <input type="text" name="name" placeholder="" required/>
+        <h4>Whats your question?</h4>
+        <input type="text" name="question" placeholder="" required/>
+        <h4 id="choices">Answers</h4>
+        <select>
+          <option value="">How many choices?</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <div id="answers" class="answers">
+            <input type="text" name="answer1" class="answer" required/>
+            <input type="text" name="answer2" class="answer" required/>
+        </div>
+        <!--<input type="text" name="answer1"/>-->
+        <!--<input type="text" name="answer2"/>-->
+        <!--<input type="text" name="answer3"/>-->
+        <!--<input type="text" name="answer4"/>-->
+        <h4>When do you need an answer</h3>
+        <input id="input-time" type="time" name="time" value="{{ time }}">
+        <input id="submit" type="submit" value="SUBMIT"/>
+    </form>
+
+
+<script>
+$("select").change(function() {
+  $("input.answer").remove()
+  var selected = $(this).find("option:selected").text();
+  for (var i = 1; i <= selected; i++) {
+    $("#answers").append('<input type="text" name="answer' + i+'" class="answer" required/>')
+  }
+})
+
+</script>
+
+
+{% endblock %}
