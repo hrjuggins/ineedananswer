@@ -42,7 +42,7 @@ plotly==2.0.13
 ptyprocess==0.5.2
 pycodestyle==2.3.1
 pycparser==2.18
-Pygments==2.2.0
+Pygments==2.7.4
 Pyphen==0.9.4
 pytz==2017.2
 RandomWords==0.2.1
